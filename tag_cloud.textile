@@ -1,0 +1,14 @@
+{% assign tag_cloud_max_font_size = 15 %}
+{% assign tag_cloud_min_font_size = 5 %}
+{% assign tag_cloud_font_unit = 'pt' %}
+{% capture size_interval %}{{ tag_cloud_max_font_size | minus: tag_cloud_min_font_size }}{% endcapture %}
+{% capture min_count %}{{ site.tags | first | last | size }}{% endcapture %}
+{% assign max_count = min_count %}
+{% for tag in site.tags %}
+{% capture post_count %}{{ tag | last | size }}{% endcapture %}
+{% if post_count > max_count %}{% assign max_count = post_count %}{% endif %}
+{% if post_count < min_count %}{% assign min_count = post_count %}{% endif %}
+{% endfor %}
+{% capture count_interval %}{{ max_count | minus: min_count }}{% endcapture %}
+{% for tag in site.tags %}{% capture current_count %}{{ tag | last | size | minus: min_count }}{% endcapture %}{% capture current_size %}{{ current_count | times: size_interval | divide_by: count_interval | plus: tag_cloud_min_font_size }}{% endcapture %}"{font-size: {{ current_size }}{{ tag_cloud_font_unit }}}{{ tag | first }}":tag.html#{{ tag | first }} {% endfor %}
+
