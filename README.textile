@@ -11,7 +11,7 @@ I started playing with "Jekyll":http://jekyllrb.com and wanted a way to display 
 h2. How to use it
 
 # Put the tag_cloud.textile in your _include folder
-# Include the file wherever you want your cloud e.g. {% highlight textile %}p(#tag-cloud). {% include tag_cloud.textile %}{% endhighlight %}
+# Include the file wherever you want your cloud e.g. p(#tag-cloud). {% include tag_cloud.textile %}
 
 h2. TODO
 
