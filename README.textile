@@ -1,0 +1,19 @@
+h1. Tag Cloud for Jekyll
+
+h2. What is it?
+
+It is a simple way to create a tag cloud for your "Jekyll":http://jekyllrb.com/ generated site. By simple I mean that it is an include file for your site without the need for anything else.
+
+h2. Why is this?
+
+I started playing with "Jekyll":http://jekyllrb.com and wanted a way to display the classic tag cloud that many blogs like to have. From googling this it seemed like I would need a special rake files or plugins to make this happen. I didn't think any additions to the basic install should be necessary given Jekylls capabilites. This is the result.
+
+h2. How to use it
+
+# Put the tag_cloud.textile in your _include folder
+# Include the file wherever you want your cloud
+
+h2. TODO
+
+* Handle the configuration of font sizes better
+* Configure the links generated
